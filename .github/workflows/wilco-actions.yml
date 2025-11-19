@@ -36,6 +36,11 @@ jobs:
         with:
           secrets: ${{ toJSON(secrets) }}
 
+      - name: Setup Node for Wilco Checks
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
       - name: Wilco checks
         id: Wilco
         uses: trywilco/actions@main
