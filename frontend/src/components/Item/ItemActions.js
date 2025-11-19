@@ -18,7 +18,7 @@ const ItemActions = (props) => {
       <span>
         <Link
           to={`/editor/${item.slug}`}
-          className="btn btn-outline-dark btn-sm mr-2"
+          className="btn btn-outline-dark btn-sm me-2"
         >
           <i className="ion-edit"></i> Edit Item
         </Link>

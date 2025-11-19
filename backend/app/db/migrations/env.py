@@ -13,7 +13,7 @@ SETTINGS = get_app_settings()
 
 # SQLAlchemy >= 1.4 deprecated the use of `postgres://` in favor of `postgresql://`
 # for the database connection url
-DATABASE_URL = SETTINGS.database_url.replace("postgres://", "postgresql://")
+DATABASE_URL = str(SETTINGS.database_url).replace("postgres://", "postgresql://")
 
 config = context.config
 

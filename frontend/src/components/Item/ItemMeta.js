@@ -11,7 +11,7 @@ const ItemMeta = (props) => {
           id="seller-image"
           src={item.seller.image}
           alt={item.seller.username}
-          className="user-pic mr-2"
+          className="user-pic me-2"
         />
       </Link>
 

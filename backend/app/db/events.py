@@ -10,7 +10,7 @@ async def connect_to_db(app: FastAPI, settings: AppSettings) -> None:
 
     # SQLAlchemy >= 1.4 deprecated the use of `postgres://` in favor of `postgresql://`
     # for the database connection url
-    database_url = settings.database_url.replace("postgres://", "postgresql://")
+    database_url = str(settings.database_url).replace("postgres://", "postgresql://")
 
     app.state.pool = await asyncpg.create_pool(
         str(database_url),

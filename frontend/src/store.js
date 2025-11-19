@@ -1,5 +1,4 @@
-import { applyMiddleware, createStore } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
+import { legacy_createStore as createStore, applyMiddleware, compose } from "redux";
 import { promiseMiddleware, localStorageMiddleware } from "./middleware";
 import reducer from "./reducer";
 
@@ -8,18 +7,13 @@ import { createBrowserHistory } from "history";
 export const history = createBrowserHistory();
 
 const getMiddleware = () => {
-  if (process.env.NODE_ENV === "production") {
-    return applyMiddleware(
-      promiseMiddleware,
-      localStorageMiddleware
-    );
-  } else {
-    // Enable additional logging in non-production environments.
-    return applyMiddleware(
-      promiseMiddleware,
-      localStorageMiddleware,
-    );
-  }
+  return applyMiddleware(
+    promiseMiddleware,
+    localStorageMiddleware
+  );
 };
 
-export const store = createStore(reducer, composeWithDevTools(getMiddleware()));
+const composeEnhancers = 
+  (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
+export const store = createStore(reducer, composeEnhancers(getMiddleware()));

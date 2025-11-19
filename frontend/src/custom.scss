@@ -20,7 +20,7 @@ $theme-colors: (
 
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
-@import "~bootstrap-icons/font/bootstrap-icons.css";
+@use "~bootstrap-icons/font/bootstrap-icons.css";
 
 body {
   background-image: url("./imgs/background.png");
@@ -50,6 +50,7 @@ body {
 
 .crop-text-3 {
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

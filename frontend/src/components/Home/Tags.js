@@ -6,7 +6,7 @@ const Tags = (props) => {
   if (tags) {
     return (
       <div className="container text-center">
-        <span className="pr-2">Popular tags: </span>
+        <span className="pe-2">Popular tags: </span>
         <span className="tag-list">
           {tags.map((tag) => {
             const handleClick = (ev) => {

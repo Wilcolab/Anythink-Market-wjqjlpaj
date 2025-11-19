@@ -4,7 +4,7 @@ import logo from "../imgs/topbar_logo.png";
 
 const LoggedOutView = () => {
   return (
-    <ul className="navbar-nav ml-auto">
+    <ul className="navbar-nav ms-auto">
       <li className="nav-item">
         <Link to="/login" className="nav-link">
           Sign in
@@ -22,7 +22,7 @@ const LoggedOutView = () => {
 
 const LoggedInView = (props) => {
   return (
-    <ul className="navbar-nav ml-auto">
+    <ul className="navbar-nav ms-auto">
       <li className="nav-item">
         <Link to="/editor" className="nav-link">
           <i className="ion-compose"></i>&nbsp;New Item
@@ -39,7 +39,7 @@ const LoggedInView = (props) => {
         <Link to={`/@${props.currentUser.username}`} className="nav-link">
           <img
             src={props.currentUser.image}
-            className="user-pic pr-1"
+            className="user-pic pe-1"
             alt={props.currentUser.username}
           />
           {props.currentUser.username}

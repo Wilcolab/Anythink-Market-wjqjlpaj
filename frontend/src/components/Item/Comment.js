@@ -12,7 +12,7 @@ const Comment = (props) => {
         <div className="card-body d-flex flex-column">
           <p className="card-text flex-grow-1">{comment.body}</p>
           <div className="d-flex flex-row align-items-center pt-2">
-            <Link to={`/@${comment.seller.username}`} className="user-pic mr-2">
+            <Link to={`/@${comment.seller.username}`} className="user-pic me-2">
               <img
                 src={comment.seller.image}
                 className="user-pic rounded-circle"
