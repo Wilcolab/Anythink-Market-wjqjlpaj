@@ -1,9 +1,27 @@
 import superagent from "superagent";
 
-const BACKEND_URL =
-  process.env.NODE_ENV !== "production"
-    ? process.env.REACT_APP_BACKEND_URL
-    : "https://api.anythink.market";
+// For GitHub Codespaces, replace the port in the URL
+const getBackendUrl = () => {
+  if (import.meta.env.MODE === "production") {
+    return "https://api.anythink.market";
+  }
+  
+  if (import.meta.env.VITE_BACKEND_URL) {
+    return import.meta.env.VITE_BACKEND_URL;
+  }
+  
+  // For GitHub Codespaces or similar environments
+  const frontendUrl = window.location.origin;
+  if (frontendUrl.includes('.app.github.dev')) {
+    // Replace 3001 with 3000 in the GitHub Codespaces URL
+    return frontendUrl.replace('-3001.', '-3000.');
+  }
+  
+  // For local development
+  return `${window.location.protocol}//${window.location.hostname}:3000`;
+};
+
+const BACKEND_URL = getBackendUrl();
 
 const API_ROOT = `${BACKEND_URL}/api`;
 

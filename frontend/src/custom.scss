@@ -1,26 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800");
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
-// Override default variables before the import
-$primary: #2b1456;
-$secondary: #ff2b98;
+// Import Bootstrap CSS (pre-compiled, no Sass warnings)
+@import "bootstrap/dist/css/bootstrap.min.css";
 
-$body-color: white; //this is the text color
-$body-bg: $primary;
+// Define custom variables as CSS custom properties
+:root {
+  --primary: #2b1456;
+  --secondary: #ff2b98;
+  --body-color: white;
+  --body-bg: var(--primary);
+  --dark: #170539;
+  --light: #af93f2;
+  --input-border-color: #d0d0d0;
+  --bs-body-bg: var(--primary);
+  --bs-body-color: white;
+  --bs-primary: #2b1456;
+  --bs-secondary: #ff2b98;
+  --bs-dark: #170539;
+  --bs-light: #af93f2;
+  --bs-border-color: #d0d0d0;
+}
 
-$dark: #170539;
-$light: #af93f2;
+// Override Bootstrap with custom styles
+* {
+  font-family: "Poppins", sans-serif !important;
+}
 
-$input-border-color: #d0d0d0;
-
-$font-family-base: "Poppins", sans-serif !important;
-
-$theme-colors: (
-  "light-gray": #f2f2f2,
-);
-
-// Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
-@use "~bootstrap-icons/font/bootstrap-icons.css";
+.bg-light-gray {
+  background-color: #f2f2f2;
+}
 
 body {
   background-image: url("./imgs/background.png");
@@ -28,8 +37,8 @@ body {
   background-repeat: no-repeat;
 }
 .page {
-  margin-top: 2 * $spacer;
-  margin-bottom: 2 * $spacer;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .user-pic {

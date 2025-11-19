@@ -2,7 +2,7 @@ import ItemMeta from "./ItemMeta";
 import CommentContainer from "./CommentContainer";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import marked from "marked";
+import { marked } from "marked";
 import {
   ITEM_PAGE_LOADED,
   ITEM_PAGE_UNLOADED,
